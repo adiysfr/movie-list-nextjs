@@ -1,9 +1,8 @@
 // Vendor
+import { useDispatch, useSelector } from 'react-redux'
 import React,{useState, useEffect, useCallback} from 'react'
-import Image from 'next/image'
 import Head from 'next/head'
 import { useDebouncedCallback } from 'use-debounce';
-import { useDispatch, useSelector } from 'react-redux'
 import Link from 'next/link'
 
 import { getMovie } from '@/redux/slices/Movie';
@@ -11,7 +10,7 @@ import { Input, Row, Col, Pagination, Spin, Skeleton } from 'antd';
 import CardComponent from '@/components/Card';
 import SkeletonComponent from '@/components/Skeleton';
 
-const index = () => {
+const Home = () => {
   const dispatch = useDispatch();
   const {data, loading} = useSelector((state)=> state.reducer.movie)
   const datas = data?.Search
@@ -109,4 +108,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Home
